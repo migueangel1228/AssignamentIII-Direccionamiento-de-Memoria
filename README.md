@@ -57,6 +57,33 @@ make extra
 make clean
 ```
 
+### Manual Compilation (if you don't have `make`)
+
+If you don't have `make`, you can compile and run each activity manually.
+
+**1. Create a directory for the binaries:**
+```bash
+mkdir bin
+```
+
+**2. Compile each activity:**
+```bash
+g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity1 src/activity1.cpp
+g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity2 src/activity2.cpp
+g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity3 src/activity3.cpp
+g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity4 src/activity4.cpp
+g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/extra src/extra.cpp
+```
+
+**3. Run each activity:**
+```bash
+# On Linux/macOS/Git Bash
+./bin/activity1
+
+# On Windows PowerShell
+.\bin\activity1
+```
+
 ### Using Docker
 To build and run in a containerized environment:
 ```bash
