@@ -28,7 +28,7 @@ int main() {
     cout << "│  [HIGH]  Stack  →  " << &stackVar      << "         │\n";
     cout << "│          stackVar = " << stackVar       << "             │\n";
     cout << "├─────────────────────────────────────┤\n";
-    cout << "│  [MID ]  Heap   →  " << heapVar        << "         │\n";
+    cout << "│  [MID ]  Heap   →  " << heapVar        << "        │\n";
     cout << "│          heapVar  = " << *heapVar      << "             │\n";
     cout << "├─────────────────────────────────────┤\n";
     cout << "│  [LOW ]  Data   →  " << &staticVar     << "         │\n";

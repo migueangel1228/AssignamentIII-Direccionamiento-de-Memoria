@@ -7,25 +7,27 @@
 #include <iomanip>
 #include "MemoryUtils.h"
 
+using namespace std;
+
 int main() {
     printSeparator("Activity 1 — Variables & Pointers");
 
     // Step 1: Declare and assign an integer variable
     int value = 42;
-    std::cout << "[Step 1] value          = " << value << std::endl;
+    cout << "[Step 1] value          = " << value << endl;
 
     // Step 2: Show the memory address of that variable
-    std::cout << "[Step 2] Address        = " << &value << std::endl;
+    cout << "[Step 2] Address        = " << &value << endl;
 
     // Step 3: Modify the value indirectly using a pointer
     int* ptr = &value;
     *ptr = 100;
-    std::cout << "[Step 3] Modified value = " << value << "  (via pointer *ptr = 100)" << std::endl;
+    cout << "[Step 3] Modified value = " << value << "  (via pointer *ptr = 100)" << endl;
 
     // Step 4: Show the value and address again
-    std::cout << "[Step 4] value          = " << value << "  | Address = " << &value << "  (unchanged)" << std::endl;
+    cout << "[Step 4] value          = " << value << "  | Address = " << &value << "  (unchanged)" << endl;
     
-    std::cout << "==========================================\n";
+    cout << "==========================================\n";
 
     return 0;
 }

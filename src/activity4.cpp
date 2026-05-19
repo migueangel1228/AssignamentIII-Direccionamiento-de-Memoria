@@ -7,15 +7,17 @@
 #include <iomanip>
 #include "MemoryUtils.h"
 
+using namespace std;
+
 int main() {
     printSeparator("Activity 4 — Dynamic Memory (new/delete)");
 
     // Step 1: Use `new` for dynamic allocation
     int* singleInt = new int(99);
-    std::cout << "[Step 1] singleInt = " << *singleInt << "  | addr = " << singleInt << std::endl;
+    cout << "[Step 1] singleInt = " << *singleInt << "  | addr = " << singleInt << endl;
     delete singleInt;
     singleInt = nullptr;
-    std::cout << "[Step 1] Memory released for singleInt." << std::endl << std::endl;
+    cout << "[Step 1] Memory released for singleInt." << endl << endl;
 
     // Step 2: Create a dynamic 2D integer matrix (3 rows x 4 columns)
     const int rows = 3;
@@ -33,15 +35,15 @@ int main() {
     }
 
     // Step 4: Print the formatted matrix
-    std::cout << "[Step 2-3] 3x4 Dynamic Matrix (i+1)*(j+1):" << std::endl;
+    cout << "[Step 2-3] 3x4 Dynamic Matrix (i+1)*(j+1):" << endl;
     for (int i = 0; i < rows; ++i) {
-        std::cout << "Row " << i << " [addr=" << matrix[i] << "]:";
+        cout << "Row " << i << " [addr=" << matrix[i] << "]:";
         for (int j = 0; j < cols; ++j) {
-            std::cout << std::setw(4) << matrix[i][j];
+            cout << setw(4) << matrix[i][j];
         }
-        std::cout << std::endl;
+        cout << endl;
     }
-    std::cout << std::endl;
+    cout << endl;
 
     // Step 5: Free the memory
     for (int i = 0; i < rows; ++i) {
@@ -50,9 +52,9 @@ int main() {
     }
     delete[] matrix;
     matrix = nullptr;
-    std::cout << "[Step 5] Memory released successfully." << std::endl;
+    cout << "[Step 5] Memory released successfully." << endl;
 
-    std::cout << "==========================================\n";
+    cout << "==========================================\n";
 
     return 0;
 }
