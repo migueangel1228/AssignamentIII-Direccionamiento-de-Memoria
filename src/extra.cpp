@@ -7,6 +7,8 @@
 #include <iomanip>
 #include "MemoryUtils.h"
 
+using namespace std;
+
 int main() {
     // 1. A local variable (stack)
     int stackVar = 111;
@@ -20,21 +22,21 @@ int main() {
     // 4. A static variable (data segment)
     static int staticVar = 333;
 
-    std::cout << "┌─────────────────────────────────────┐\n";
-    std::cout << "│         MEMORY MAP (approx)         │\n";
-    std::cout << "├─────────────────────────────────────┤\n";
-    std::cout << "│  [HIGH]  Stack  →  " << &stackVar      << "        │\n";
-    std::cout << "│          stackVar = " << stackVar       << "             │\n";
-    std::cout << "├─────────────────────────────────────┤\n";
-    std::cout << "│  [MID ]  Heap   →  " << heapVar        << "         │\n";
-    std::cout << "│          heapVar  = " << *heapVar       << "             │\n";
-    std::cout << "├─────────────────────────────────────┤\n";
-    std::cout << "│  [LOW ]  Data   →  " << &staticVar     << "         │\n";
-    std::cout << "│          staticVar = " << staticVar    << "            │\n";
-    std::cout << "├─────────────────────────────────────┤\n";
-    std::cout << "│  [LOW ]  Code   →  " << codeAddr       << "         │\n";
-    std::cout << "│          main() address             │\n";
-    std::cout << "└─────────────────────────────────────┘\n";
+    cout << "┌─────────────────────────────────────┐\n";
+    cout << "│         MEMORY MAP (approx)         │\n";
+    cout << "├─────────────────────────────────────┤\n";
+    cout << "│  [HIGH]  Stack  →  " << &stackVar      << "         │\n";
+    cout << "│          stackVar = " << stackVar       << "             │\n";
+    cout << "├─────────────────────────────────────┤\n";
+    cout << "│  [MID ]  Heap   →  " << heapVar        << "         │\n";
+    cout << "│          heapVar  = " << *heapVar      << "             │\n";
+    cout << "├─────────────────────────────────────┤\n";
+    cout << "│  [LOW ]  Data   →  " << &staticVar     << "         │\n";
+    cout << "│          staticVar = " << staticVar    << "            │\n";
+    cout << "├─────────────────────────────────────┤\n";
+    cout << "│  [LOW ]  Code   →  " << codeAddr       << "         │\n";
+    cout << "│          main() address             │\n";
+    cout << "└─────────────────────────────────────┘\n";
 
     delete heapVar;
     heapVar = nullptr;

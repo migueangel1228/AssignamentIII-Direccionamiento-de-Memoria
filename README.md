@@ -68,20 +68,21 @@ mkdir bin
 
 **2. Compile each activity:**
 ```bash
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity1 src/activity1.cpp
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity2 src/activity2.cpp
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity3 src/activity3.cpp
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/activity4 src/activity4.cpp
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O0 -g -I include -o bin/extra src/extra.cpp
+g++ -I include -o bin/activity1 src/activity1.cpp
+g++ -I include -o bin/activity2 src/activity2.cpp
+g++ -I include -o bin/activity3 src/activity3.cpp
+g++ -I include -o bin/activity4 src/activity4.cpp
+g++ -I include -o bin/extra src/extra.cpp
 ```
 
 **3. Run each activity:**
 ```bash
-# On Linux/macOS/Git Bash
-./bin/activity1
-
-# On Windows PowerShell
-.\bin\activity1
+# On Windows
+../bin/activity1
+./bin/activity2
+./bin/activity3
+./bin/activity4
+./bin/extra
 ```
 
 ### Using Docker
@@ -91,10 +92,6 @@ docker run --rm -v $(pwd):/workspace gcc:latest bash -c \
   "cd /workspace && make all && make run-all"
 ```
 
-### Verify Activity 4 for memory leaks
-```bash
-valgrind --leak-check=full ./bin/activity4
-```
 
 ## Activity Outputs
 
@@ -181,24 +178,10 @@ Row 2 [addr=0x...]:   3   6   9  12
 └─────────────────────────────────────┘
 ```
 
-## Memory Regions — Key Concepts
-
-| Region | Location | Managed by | Content |
-|--------|----------|------------|---------|
-| Stack  | High addr| OS/CPU     | Local variables, function frames |
-| Heap   | Mid addr | Programmer | `new`/`delete` allocations |
-| Data   | Low-mid  | OS         | Global and static variables |
-| Code   | Low addr | OS         | Compiled instructions (read-only) |
-
-## Design Constraints
-
-- **No `break` or `continue`**: Control flow is managed using standard loop conditions.
-- **Standard Library Only**: The project relies exclusively on the C++ standard library.
-- **RAII**: Resource Acquisition Is Initialization is applied, especially for dynamic memory in Activity 4, ensuring no memory leaks.
 
 ## Author
 
-- **Name**: Your Name
-- **Course**: Sistemas Operativos
-- **Date**: May 18, 2026
+**Miguel Ángel | Esteban Arismendi |Samuel Alberto Bonilla**  
+Curso: Sistemas Operativos — 300CIG011  
+Universidad Javeriana cali — 2026_1
 
