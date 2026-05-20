@@ -27,23 +27,6 @@ int main() {
         matrix[i] = new int[cols];
     }
 
-    // Step 3: Fill the matrix with data
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            matrix[i][j] = (i + 1) * (j + 1);
-        }
-    }
-
-    // Step 4: Print the formatted matrix
-    cout << "[Step 2-3] 3x4 Dynamic Matrix (i+1)*(j+1):" << endl;
-    for (int i = 0; i < rows; ++i) {
-        cout << "Row " << i << " [addr=" << matrix[i] << "]:";
-        for (int j = 0; j < cols; ++j) {
-            cout << setw(4) << matrix[i][j];
-        }
-        cout << endl;
-    }
-    cout << endl;
 
     // Step 5: Free the memory
     for (int i = 0; i < rows; ++i) {
